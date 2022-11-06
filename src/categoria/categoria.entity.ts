@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { ProductoCaracteristicoEntity } from '../producto-caracteristico/producto-caracteristico.entity';
 import { Field, ObjectType } from '@nestjs/graphql';
@@ -16,7 +17,5 @@ export class CategoriaEntity {
     @Field(type => [ProductoCaracteristicoEntity])
     @OneToMany(() => ProductoCaracteristicoEntity, producto => producto.categoria)
     productos: ProductoCaracteristicoEntity[];
-
-
 
 }
