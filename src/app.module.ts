@@ -26,6 +26,7 @@ import { JwtService } from '@nestjs/jwt';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { ApolloDriver } from '@nestjs/apollo';
+import { EstrellaMichelinModule } from './estrella-michelin/estrella-michelin.module';
 
 @Module({
   imports: [
@@ -61,7 +62,7 @@ import { ApolloDriver } from '@nestjs/apollo';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       driver: ApolloDriver
     }),
-
+    EstrellaMichelinModule,
   ],
   controllers: [AppController],
   providers: [AppService, JwtService,
